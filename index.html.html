@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gotcha Bibek</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Important for mobile -->
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background-color: black;
+      color: #00ffee;
+      font-family: 'Arial', sans-serif;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 24px;
+      text-align: center;
+      animation: flicker 2s infinite alternate;
+      text-shadow: 0 0 10px #00ffee, 0 0 20px #00ffee;
+      z-index: 2;
+      position: relative;
+      margin: 0 20px;
+    }
+
+    @keyframes flicker {
+      0% { opacity: 0.6; }
+      100% { opacity: 1; }
+    }
+
+    #readyBtn {
+      margin-top: 30px;
+      padding: 12px 24px;
+      font-size: 16px;
+      background: #00ffee;
+      color: black;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #00ffee;
+      transition: all 0.3s ease;
+      z-index: 2;
+      position: relative;
+    }
+
+    #readyBtn:active {
+      transform: scale(0.95);
+    }
+
+    .surprise {
+      font-size: 38px;
+      color: red;
+      font-weight: bold;
+      text-align: center;
+      animation: bounce 0.6s infinite;
+      display: none;
+      z-index: 3;
+      position: relative;
+      padding: 20px;
+    }
+
+    @keyframes bounce {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="welcomeText">Hey Bibek, are you ready to be rich?</h1>
+  <button id="readyBtn">Yes, I'm ready</button>
+
+  <div class="surprise" id="surprise">F*ck You 😈🖕😂</div>
+
+  <script>
+    const button = document.getElementById('readyBtn');
+    const text = document.getElementById('welcomeText');
+    const surprise = document.getElementById('surprise');
+
+    button.addEventListener('click', () => {
+      text.style.display = 'none';
+      button.style.display = 'none';
+      surprise.style.display = 'block';
+    });
+  </script>
+
+</body>
+</html>
